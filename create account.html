@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header >
+    <div class="right topic">Assigner</div>
+    <div class="left-header"> 
+      <div class="left home">Home</div>
+      <div class="left white">login</div>
+      <div class="left black">Get started</div>
+    </div>
+    <hr/>
+  </header>
+  
+  
+  <div class="div2">
+
+    <div class="divimg"><img src="https://cdni.iconscout.com/illustration/premium/thumb/business-task-5293210-4411616.png"   class="img"></div>
+
+  <div >
+     <div class="login">Signup</div>
+  
+      <div class="inp">
+
+      <div>
+    <div class="label">Full Name:</div>
+    <input placeholder="write here">
+  </div>
+  
+  <div>
+    <div class="label">Username:</div>
+    <input placeholder="write here" type="password">
+  </div>
+
+  <div>
+    <div class="label">Email:</div>
+    <input placeholder="write here" type="password">
+  </div>
+  
+  <div>
+    <div class="label">Role:</div>
+    <input placeholder="write here" type="password">
+  </div>
+
+  <div>
+    <div class="label">Password:</div>
+    <input placeholder="write here" type="password">
+  </div>
+
+  <div>
+    <div class="label">confirm password:</div>
+    <input placeholder="write here" type="password">
+  </div>
+
+
+  <div><button class="login-button">Signup</button></div>
+  </div>
+  </div></div>
+ 
+ 
+</body>
+<style>
+  .divimg{margin-top: 10vh;float:left}
+  .img{width: 300px;}
+  .label{margin-bottom: 5px;font-weight: 300;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif}
+  .inp{width: 80%;}
+  .white{background-color: rgb(73, 181, 73);padding-left:13px;padding-right: 13px;padding-top: 5px;padding-bottom: 5px;border-radius: 5px;color: white;}
+    
+  .black{background-color: black;color: white;padding: 7px;border-radius: 5px;}
+  .right{display: inline;font-size: large;font-weight: 700;color: blue;letter-spacing: 1px;line-height: 20%;font-family: Verdana, Geneva, Tahoma, 
+  sans-serif;}
+  .left-header{position: absolute;right: 0;display: inline;}
+  .left{display: inline;margin: 14px;}
+  header{}
+  .login{margin-bottom: 20px;font-weight: 600;font-size: large;font-family: Verdana, Geneva, Tahoma, sans-serif;}
+  input{width: 90%;padding: 8px;margin-bottom: 15px;}
+  .login-button{width: 97%;padding: 9px;margin-top: 10px;background-color:rgb(35, 35, 239);border: none;font-family: Verdana, Geneva, Tahoma, 
+  sans-serif;font-weight: 600;color: white;}
+  .div2{grid-template-columns: 50% 50%;display: grid;}
+  .home{margin-top: 20px;background-color:;padding-left:13px;padding-right: 13px;padding-top: 5px;padding-bottom: 5px;border-radius: 5px}
+
+@media (max-width:720px) {
+  .img{width: 250px}
+}
+@media (max-width:630px) {
+  .img{width: 220px}
+}
+@media (max-width:560px) {
+.divimg{margin-top: 0vh;}
+  .img{display: none;margin: 0;}
+  .div2{grid-template-columns: 100%;margin-left: 15%;}
+  .inp{border: 1px solid black;padding-left: 10px;padding-right: 10px;padding-top: 10px;padding-bottom: 10px;border-radius: 10px;}
+  .left{margin:4px ;}
+}
+@media (max-width:560px) {
+  .left{margin:3px;}
+}
+@media (max-width:370px) {
+  .left{margin:2px;}
+}
+@media (max-width:345px) {
+  .left{margin:1px;}
+}
+
+</style>
+</html>
