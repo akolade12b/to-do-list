@@ -15,7 +15,11 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="assigner">Assigner</div>
+  <div class="header">
+  <div class="assigner" style="display: inline;">Assigner</div>
+  <div class="headers" style="display: inline;position:fixed;right:10px"></div>
+
+  </div>
   <hr>
 
 <div class="grid">
@@ -33,9 +37,10 @@
 
 <!--grid2--->
   <div class="grid2">
-<div>
+    <div style="margin: 10px;margin-bottom:20px">Your tasks</div>
+<div style="margin-left: 30px;">
   <div class="task">
-  <div>Your tasks</div>
+
    
    
    
@@ -54,7 +59,7 @@
   </div>
 
   <div class="col-3 student-grade">
-    status<div style="display: inline;margin-left:45px">Action</div>
+    status<div style="display: inline;margin:0;margin-left:60px;">Action</div>
   </div>
 </div>
 <br>
@@ -82,9 +87,12 @@
  
     <div class="assigning">
       <div>Due date</div>
-      <input class="assigning-input date">
-      </div>
-      <button onclick="assigning()">submit</button>
+      <input class="assigning-input date" type="date">
+      
+      <button onclick="assigning()" class="assigning-input submit">submit</button>
+    <div class="error" style="margin-left: 3px;"></div>
+    </div>
+      
 </div>
 
 
@@ -134,12 +142,13 @@
 
 
 <style>
+.submit{border: none;background-color:green;border-radius: 5px;color: white;margin-top: 30px;padding-top: 5px;padding-bottom: 5px;}
  .item{display: inline;max-width: 200px;border: 1px solid black;padding-left: 50px;padding-right: 50px;word-wrap: break-word;} 
   .titles,.descs,.ends,.statuss{padding: 20px;max-width: 200px;word-wrap: break-word;min-width: 100px;}
   .par-grid1-item{margin-top: 35px;}
-  .grid1-item{color: white;margin-left: 20px;margin-top: 15px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight: 600;font-size: medium;}
+  .grid1-item{color: white;padding-left: 20px;margin-top: 10px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight: 600;font-size: medium;padding: 10px;}
   .first-grid{background-color: blue;height: 100vh;margin: 0;}
-  .grid{display: grid;grid-template-columns: 20% 60%;margin: 0;padding: 0;}
+  .grid{display: grid;grid-template-columns: 20% 70%;margin: 0;padding: 0;}
   body{margin: 0;}
   .assigner{margin-left:40px;margin-top: 10px;margin-bottom: 10px;padding-top: 5px;color: blue;font-size:larger;font-family: Verdana, Geneva, Tahoma, sans-serif;padding-bottom: 5px;}
   hr{margin: 0;}
@@ -147,22 +156,45 @@
   .assigning{margin-top: 20px;justify-content: center;margin-left: 40%;}
   .assigning-input{width: 80%;}
   .assigning-task{display: none;}
+  .color{background-color: rgb(0, 0 ,12 );}
+  .grid1-item:hover{background-color:rgb(0, 0, 12);cursor:pointer;}
+  .a{background-color: rgb(0, 0, 12);cursor: pointer;}
+  .red{background-color: rgb(201, 199, 199);}
+  .rows{padding: 7px;padding-top: 7px;}
+  .rowss{margin-bottom: 25px;}
+  @media (max-width:1000px) {
+    .grid{display: grid;grid-template-columns: 22% 76%;}
+  }
+  @media (max-width:915px) {
+    .grid{display: grid;grid-template-columns: 20% 78%;}
+  }
+  @media (max-width:915px) {
+    .grid{display: grid;grid-template-columns: 0% 98%;}
+    .color{background-color: transparent;}
+  }
 </style>
 
 </body>
 <script>
 
-
-
+if(screen.width<=915&&screen.width>=500)
+{document.querySelector('.headers').innerHTML=`    <div class="par-grid1-item" style="display:inline" >
+  <div class="grid1-it tasks" style="display:inline;" >Tasks</div>
+  <div class="grid1-ite assign" style="display:inline;margin-left:30px;margin-right:20px">Assign</div>
+</div>`}
 document.querySelector('.tasks').addEventListener('click',()=>{
 document.querySelector('.assigning-task').style.display="none"
 document.querySelector('.task').style.display="block"
+
+document.querySelector('.assign').classList.remove('color')
+document.querySelector('.tasks').classList.add('color')
 })
 
 document.querySelector('.assign').addEventListener('click',()=>{
   document.querySelector('.task').style.display="none"
   document.querySelector('.assigning-task').style.display="block"
-
+  document.querySelector('.assign').classList.add('color')
+  document.querySelector('.tasks').classList.remove('color')
   })
   
 
@@ -177,9 +209,17 @@ document.querySelector('.assign').addEventListener('click',()=>{
 
 
 
+let array=JSON.parse(localStorage.getItem('array'))
+if(!array){
+  array= [{title:'wash plate',desc:'after playing ball',enddate:'febuary 3 2024',status:'pending'},{title:'wash car',desc:'after sweeping floor',
+  enddate:'febuary 3 2024',status:'pending'}]
+}
 
-
-  let array =[{title:'wash plate',desc:'after playing ball',enddate:'febuary 3 2024',status:'pending'},{title:'wash car',desc:'after sweeping floor',enddate:'febuary 3 2024',status:'pending'}]
+function save(){
+  localStorage.setItem('array',JSON.stringify(array))
+}
+ 
+ save()
 
 
 function loop(){
@@ -194,7 +234,8 @@ function loop(){
     let status=every.status
     acca+=` 
      
-    <div class="row justify-content-evenly">
+    <div class="row justify-content-evenly rows rowss" data-no="${i+1}">
+      
       <div class="col-3 student-name"  >
         ${title}
       </div>
@@ -207,13 +248,13 @@ function loop(){
       </div>
     
       <div class="col-3 student-grade">
-        ${status}<button onclick="array.splice(${i},1);loop()" style="margin-left:40px;border:none;background-color:transparent"><i class="fa-solid fa-trash"></i></button>
+        ${status}<button onclick="array.splice(${i},1);loop();save();color()" style="margin-left:50px;border:none;background-color:transparent"><i class="fa-solid fa-trash"></i></button>
       </div>
       
-   
+    
     </div>
    
-      <br>
+      
      
      
   `
@@ -232,10 +273,27 @@ function assigning(){
   let title=document.querySelector('.title')
   let desc=document.querySelector('.desc')
   let date=document.querySelector('.date')
-  array.push({title:title.value,desc:desc.value,enddate:date.value,status:'pending'})
-  console.log(array)
-  loop()
-}
 
+
+if(title.value===''|| desc.value===''||date.value===''){document.querySelector('.error').innerHTML=`Task assigning not complete`,setTimeout(()=>{document.querySelector('.error').innerHTML=''},4000)}
+else{
+
+
+
+
+  array.push({title:title.value,desc:desc.value,enddate:date.value,status:'pending'})
+  }
+
+  loop()
+  save()
+  color()
+}
+function color(){
+document.querySelectorAll('.justify-content-evenly').forEach((each)=>{
+  let num =each.dataset.no
+  if(num%2){
+  each.classList.add('red')}
+ })}
+ color()
 </script>
 </html>
