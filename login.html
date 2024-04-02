@@ -13,7 +13,37 @@
 
 
 
-
+    <header >
+      <div class="right topic">Assigner</div>
+      <div class="left-header"> 
+        <div class="left home">Home</div>
+        <div class="left white"><a href="create account.html">Sign up</a></div>
+        <div class="left black"><a href="get started.html">Get started</a></div>
+      </div>
+      <hr/>
+    </header>
+    
+    
+    <div class="div2">
+    <div>
+    <div class="login">Sign up</div>
+    
+    <div class="inp">
+    <div>
+      <div class="label">Email:</div>
+      <input placeholder="write here">
+    </div>
+    
+    <div>
+      <div class="label">password:</div>
+      <input placeholder="write here" type="password">
+    </div>
+    
+    <div><button class="login-button">Login</button></div>
+    </div>
+    </div>
+    <div><img src="https://media.istockphoto.com/id/1332282751/vector/to-do-list-young-woman-puts-check-marks-in-front-of-completed-tasks.jpg?s=612x612&w=0&k=20&c=pynDtNMpvMXFi878bNbjDhpY8ubOj4sbloGbzXDrgDA=" style="float: left;"  class="img"></div>
+    </div>
 
 
 
@@ -35,13 +65,10 @@
 
 
   </div>
-<div style="margin-top: 10px;position:fixed;bottom:10px">
-<div class="dot1" style="display: inline;"><button class="back-front">Back</button></div>
 
-<div class="dot3" style="display: inline;position:fixed;right:10px"><button class="back-front">Next</button></div>
-</div>
 </body>
 <style>
+  a{text-decoration: none;color: white;}
   .back-front{background-color: rgb(5, 222, 5);border: none;padding:6px;padding-right: 15px;padding-left: 15px;border-radius: 4px;}
   .topic{margin: 0;}
   .img{width: 400px;}
@@ -106,73 +133,3 @@
   
   
 </style>
-<script>
-
-  let d0t1=document.querySelector('.dot1')
-  let d0t2=document.querySelector('.dot2')
-  let d0t3=document.querySelector('.dot3')
-  let first =document.querySelector('.first')
-  let no =1;
-  thi()
-d0t1.addEventListener('click',()=>{
-if(no<=3&&no>=2){no=no-1}
-console.log(no)
-
-thi()
-})
-
-d0t3.addEventListener('click',()=>{
-  if(no<=2&&no>=1){no=no+1}
-  console.log(no)
-  
-  thi()
-  })
-  
-
-
-function thi(){
-if(no===1){first.innerHTML=`<div style="justify-content;display:flex" class="firstslide"><img src="https://cdni.iconscout.com/illustration/premium/thumb/man-complete-checklist-with-tick-marks-6708416-5605102.png" class="firstslideimg"></div>`,document.querySelector('.dot3').style.visibility="visible",document.querySelector('.dot1').style.visibility="hidden"}
-
-else if(no===2){first.innerHTML=`<div style="justify-content:center;display:flex" class="secondslide"><img src="https://cdni.iconscout.com/illustration/premium/thumb/todo-list-5523307-4609476.png?f=webp" class="secondslideimg"> </div>`,document.querySelector('.dot3').style.visibility="visible",document.querySelector('.dot1').style.visibility="visible"}
-
-else{first.innerHTML=`
-    <header >
-  <div class="right topic">Assigner</div>
-  <div class="left-header"> 
-    <div class="left home">Home</div>
-    <div class="left white">login</div>
-    <div class="left black">Get started</div>
-  </div>
-  <hr/>
-</header>
-
-
-<div class="div2">
-<div>
-<div class="login">Login</div>
-
-<div class="inp">
-<div>
-  <div class="label">Email:</div>
-  <input placeholder="write here">
-</div>
-
-<div>
-  <div class="label">password:</div>
-  <input placeholder="write here" type="password">
-</div>
-
-<div><button class="login-button">Login</button></div>
-</div>
-</div>
-<div><img src="https://media.istockphoto.com/id/1332282751/vector/to-do-list-young-woman-puts-check-marks-in-front-of-completed-tasks.jpg?s=612x612&w=0&k=20&c=pynDtNMpvMXFi878bNbjDhpY8ubOj4sbloGbzXDrgDA=" style="float: left;"  class="img"></div>
-</div>`,document.querySelector('.dot3').style.visibility="hidden",document.querySelector('.dot1').style.visibility="visible"}
-
-}
-
-
-  
-
-  
-</script>
-</html>

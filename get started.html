@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!--beggining-->
+<body>
+  <div class="first">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+<div style="margin-top: 10px;position:fixed;bottom:10px">
+<div class="dot1" style="display: inline;"><button class="back-front">Back</button></div>
+
+<div class="dot3" style="display: inline;position:fixed;right:10px"><button class="back-front">Next</button></div>
+</div>
+</body>
+<style>
+  a{text-decoration: none;color: white;}
+  .back-front{background-color: rgb(5, 222, 5);border: none;padding:6px;padding-right: 15px;padding-left: 15px;border-radius: 4px;}
+  .topic{margin: 0;}
+  .img{width: 400px;}
+  .label{margin-bottom: 5px;font-weight: 300;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif}
+  .inp{width: 80%;}
+  .white{background-color: rgb(5, 222, 5);padding-left:13px;padding-right: 13px;padding-top: 5px;padding-bottom: 5px;border-radius: 5px;}
+  
+  .black{background-color: black;color: white;padding: 7px;border-radius: 5px;}
+  .right{display: inline;font-size: large;font-weight: 700;color: blue;letter-spacing: 1px;line-height: 20%;font-family: Verdana, Geneva, Tahoma, sans-serif;}
+  .left-header{position: absolute;right: 0;display: inline;}
+  .left{display: inline;margin: 14px;}
+  header{margin-bottom: 20vh;}
+  .login{margin-bottom: 20px;font-weight: 600;font-size: large;font-family: Verdana, Geneva, Tahoma, sans-serif;}
+  input{width: 90%;padding: 8px;margin-bottom: 15px;}
+  .login-button{width: 97%;padding: 9px;margin-top: 10px;background-color: rgb(14, 184, 14);border: none;font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: 600;}
+  .div2{width: 70%;display: grid;grid-template-columns:70% 20%;;}
+  .home{margin-top: 20px;background-color: orange;padding-left:13px;padding-right: 13px;padding-top: 5px;padding-bottom: 5px;border-radius: 5px}
+  @media (max-width:1000px) {
+    .inp{width: 80%;}
+  }
+  
+  @media (max-width:783px) {
+    .div2{grid-template-columns: 80% 20%;}
+    .inp{width: 80%;}
+.img{width: 300px;margin-top: 40px;}
+  }
+ 
+  @media (max-width:700px) {
+    .div2{grid-template-columns: 70% 10%;}
+    .inp{width: 100%;}
+ img{width: 1%px;margin-top: 40px;}
+  }
+  @media (max-width:593px) {
+    .div2{grid-template-columns: 60% 10%;}
+    .inp{width: 100%;}
+ img{width: 1%px;margin-top: 40px;}
+  }
+
+ @media (max-width:521px) {
+  .div2{grid-template-columns: repeat(1,90%);margin-left: 20%;}
+  .img{display: none;}
+  
+ }
+ @media (max-width:460px) {
+  .firstslideimg,.secondslideimg{width: 90%;}
+
+  .firstslide,.secondslide{justify-content: left;}
+ }
+ @media (max-width:400px) {
+
+  .div2{margin-left: 15%;}
+  .left{margin: 3px;}
+  input{padding: 9px; padding-top: 10px;padding-bottom: 10px;}
+  .loginbutton{padding: 11px;width: 100%;}
+  .inp{border: 1px solid black;padding: 10px;padding-top: 45px;padding-bottom: 45px;border-radius: 9px;}
+ }
+ 
+ 
+ 
+  
+  
+  
+  
+</style>
+<script>
+
+  let d0t1=document.querySelector('.dot1')
+  let d0t2=document.querySelector('.dot2')
+  let d0t3=document.querySelector('.dot3')
+  let first =document.querySelector('.first')
+  let no =1;
+  thi()
+d0t1.addEventListener('click',()=>{
+if(no<=3&&no>=2){no=no-1}
+console.log(no)
+
+thi()
+})
+
+d0t3.addEventListener('click',()=>{
+  if(no<=2&&no>=1){no=no+1}
+  console.log(no)
+  
+  thi()
+  })
+  
+
+
+function thi(){
+if(no===1){first.innerHTML=`<div style="justify-content;display:flex" class="firstslide"><img src="https://cdni.iconscout.com/illustration/premium/thumb/man-complete-checklist-with-tick-marks-6708416-5605102.png" class="firstslideimg"></div>`,document.querySelector('.dot3').style.visibility="visible",document.querySelector('.dot1').style.visibility="hidden"}
+
+else if(no===2){first.innerHTML=`<div style="justify-content:center;display:flex" class="secondslide"><img src="https://cdni.iconscout.com/illustration/premium/thumb/todo-list-5523307-4609476.png?f=webp" class="secondslideimg"> </div>`,document.querySelector('.dot3').style.visibility="visible",document.querySelector('.dot1').style.visibility="visible"}
+
+else{first.innerHTML=`
+    <header >
+  <div class="right topic">Assigner</div>
+  <div class="left-header"> 
+    <div class="left home">Home</div>
+    <div class="left white"><a href="create account.html">Sign up</a></div>
+    <div class="left black"><a href="login-page.html">Get started</a></div>
+  </div>
+  <hr/>
+</header>
+
+
+<div class="div2">
+<div>
+<div class="login">Sign up</div>
+
+<div class="inp">
+<div>
+  <div class="label">Email:</div>
+  <input placeholder="write here">
+</div>
+
+<div>
+  <div class="label">password:</div>
+  <input placeholder="write here" type="password">
+</div>
+
+<div><button class="login-button">Login</button></div>
+</div>
+</div>
+<div><img src="https://media.istockphoto.com/id/1332282751/vector/to-do-list-young-woman-puts-check-marks-in-front-of-completed-tasks.jpg?s=612x612&w=0&k=20&c=pynDtNMpvMXFi878bNbjDhpY8ubOj4sbloGbzXDrgDA=" style="float: left;"  class="img"></div>
+</div>`,document.querySelector('.dot3').style.visibility="hidden",document.querySelector('.dot1').style.visibility="visible"}
+
+}
+
+
+  
+
+  
+</script>
+</html>
