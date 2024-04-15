@@ -105,7 +105,6 @@
   
   
   
-  
 </style>
 <script>
 
@@ -134,7 +133,11 @@ d0t3.addEventListener('click',()=>{
 function thi(){
 if(no===1){first.innerHTML=`<div style="justify-content;display:flex" class="firstslide"><img src="https://cdni.iconscout.com/illustration/premium/thumb/man-complete-checklist-with-tick-marks-6708416-5605102.png" class="firstslideimg"></div>`,document.querySelector('.dot3').style.visibility="visible",document.querySelector('.dot1').style.visibility="hidden"}
 
-else if(no===2){first.innerHTML=`<div style="justify-content:center;display:flex" class="secondslide"><img src="https://cdni.iconscout.com/illustration/premium/thumb/todo-list-5523307-4609476.png?f=webp" class="secondslideimg"> </div>`,document.querySelector('.dot3').style.visibility="visible",document.querySelector('.dot1').style.visibility="visible"}
+else if(no===2){first.innerHTML=`
+  <div class="secondslide" style="margin-bottom:20px"><img src="https://cdni.iconscout.com/illustration/premium/thumb/todo-list-5523307-4609476.png?f=webp" class="secondslideimg">  </div>
+
+
+`,document.querySelector('.dot3').style.visibility="visible",document.querySelector('.dot1').style.visibility="visible"}
 
 else{first.innerHTML=`
     <header >

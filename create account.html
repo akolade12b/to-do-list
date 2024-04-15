@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://kit.fontawesome.com/376fe4413c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -34,27 +35,29 @@
   
   <div>
     <div class="label">Username:</div>
-    <input placeholder="write here" type="password">
+    <input placeholder="write here" >
   </div>
 
   <div>
     <div class="label">Email:</div>
-    <input placeholder="write here" type="password">
+    <input placeholder="write here" >
   </div>
   
   <div>
     <div class="label">Role:</div>
-    <input placeholder="write here" type="password">
+    <input placeholder="write here" >
   </div>
 
   <div>
     <div class="label">Password:</div>
-    <input placeholder="write here" type="password">
+    <input placeholder="write here" type="password" class="password">
+    <i class="fa-solid fa-eye-slash p_eye" style="margin-left: -30px;"></i>
   </div>
 
   <div>
-    <div class="label">confirm password:</div>
-    <input placeholder="write here" type="password">
+    <div class="label">Confirm Password:</div>
+    <input placeholder="write here" type="password" class="cpassword">
+    <i class="fa-solid fa-eye-slash c_eye" style="margin-left: -30px;"></i>
   </div>
 
 
@@ -64,11 +67,31 @@
  
  <!--end of html-->
 </body>
+<script>
+peye=document.querySelector('.p_eye')
+password=document.querySelector('.password')
+peye.addEventListener('click',()=>{
+peye.classList.toggle('fa-eye')
+if(password.type==='password'){password.type='text'}
+else if(password.type==='text'){password.type='password'}
+})
+
+
+ceye=document.querySelector('.c_eye')
+cpassword=document.querySelector('.cpassword')
+ceye.addEventListener('click',()=>{
+ceye.classList.toggle('fa-eye')
+if(cpassword.type==='password'){cpassword.type='text'}
+else if(cpassword.type==='text'){cpassword.type='password'}
+})
+
+</script>
 <style>
   a{text-decoration: none;color: white;}
   .divimg{margin-top: 10vh;float:left}
   .img{width: 300px;}
   .label{margin-bottom: 5px;font-weight: 300;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif}
+  
   .inp{width: 80%;}
   .white{background-color: rgb(73, 181, 73);padding-left:13px;padding-right: 13px;padding-top: 5px;padding-bottom: 5px;border-radius: 5px;color: white;}
     
@@ -79,7 +102,8 @@
   .left{display: inline;margin: 14px;position: absolue;right:0;}
   header{}
   .login{margin-bottom: 20px;font-weight: 600;font-size: large;font-family: Verdana, Geneva, Tahoma, sans-serif;}
-  input{width: 90%;padding: 8px;margin-bottom: 15px;}
+  input{width: 90%;padding: 8px;margin-bottom: 15px;;}
+  .password,.cpassword{padding: 8px;margin-bottom: 15px;padding-right: 15%;width: 77%;}
   .login-button{width: 97%;padding: 9px;margin-top: 10px;background-color:rgb(35, 35, 239);border: none;font-family: Verdana, Geneva, Tahoma, 
   sans-serif;font-weight: 600;color: white;}
   .div2{grid-template-columns: 50% 50%;display: grid;}
